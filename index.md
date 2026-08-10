@@ -1,43 +1,55 @@
 ---
 layout: default
-title: Vision-and-Force Robotic Cable Insertion
-description: How multiview keypoints become force-limited SFP and SC insertion commands.
+title: Intrinsic - AI for Industry Challenge
+description: How we used vision and force feedback to insert networking and fiber-optic connectors with a robot.
 ---
 
 <p class="eyebrow">AI FOR INDUSTRY CHALLENGE · SFP + SC INSERTION</p>
 
-# Vision-and-force robotic cable insertion
+# Intrinsic - AI for Industry Challenge
 
-<p class="lede">Our final system uses the same core idea for two different connectors: measure the held plug, measure its target port, transform both into a common frame, and control the plug tip through contact.</p>
+<p class="lede">Plugging a connector into a port is effortless for a person. For a robot, it means locating two small objects, aligning them within tight tolerances, and responding safely when they make contact.</p>
 
-For the
-[Intrinsic AI for Industry Challenge](https://www.intrinsic.ai/events/ai-for-industry-challenge),
-we built a ROS 2 system that inserts SFP modules into NIC ports and SC plugs
-into optical adapters using three wrist cameras and a force-torque sensor.
+For the [Intrinsic - AI for Industry Challenge](https://www.intrinsic.ai/events/ai-for-industry-challenge),
+our robot had to insert small form-factor pluggable (SFP) networking modules
+into network interface card (NIC) ports, and SC fiber-optic plugs into optical
+adapters. It performed these insertions using three wrist-mounted cameras and
+a sensor that measures contact forces.
 
-The neural networks do not output robot commands. They predict 2D landmarks.
-Calibrated multiview geometry reconstructs the plug and port in 3D, a per-grasp
-transform relates the plug tip to the robot's tool center point (TCP), and a
-connector-specific controller converts the desired tip motion into TCP targets.
+We built a ROS 2 system that combines vision with force feedback. The cameras
+locate the held connector and its destination in three-dimensional space. The
+robot then aligns the connector, moves it toward the port, and uses its force
+sensor to guide the final insertion without applying unsafe pressure.
+
+The neural networks do not control the robot directly. Instead, they mark
+recognizable points on the connector and port in ordinary camera images.
+Measurements from several views are combined to reconstruct their positions
+and orientations in 3D. The system also measures how the connector sits in the
+gripper, allowing it to calculate how the robot must move to place the tip at
+the desired position.
 
 <div class="link-row">
   <a href="https://github.com/AMMistry18/aic">Project repository →</a>
   <a href="https://github.com/intrinsic-dev/aic">Upstream toolkit →</a>
 </div>
 
-![The four-stage SFP and SC pipeline chooses a view, measures the plug and port frames, builds a TCP target, and inserts under force limits.](assets/system-architecture.svg)
+![The shared pipeline observes the connector and port, locates them in 3D, aligns the connector, and inserts it using force feedback.](assets/system-architecture.svg)
 
 ## How the system works
 
 Every insertion follows the same four stages:
 
-1. **Find a useful view** of the requested connector sector.
-2. **Build a 3D frame** for the held plug and another for the target port.
-3. **Convert the desired plug pose** into a target for the robot's TCP.
-4. **Align, seat, and verify** the connector under force limits.
+1. **Find a clear view.** Position the wrist cameras so the connector and port
+   can be measured reliably.
+2. **Locate the connector and port.** Combine landmarks from multiple camera
+   views to estimate their positions in 3D.
+3. **Align the connector.** Account for how it sits in the gripper and
+   calculate the required robot motion.
+4. **Insert safely.** Guide it into the port using visual alignment and force
+   feedback.
 
-SFP and SC share this structure. Their physical dimensions, port landmarks,
-insertion depths, and recovery behaviors are configured separately.
+The same pipeline handles both SFP and SC connectors, with separate dimensions,
+landmarks, insertion depths, and recovery settings.
 
 ## 1. Find a useful view
 

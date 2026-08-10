@@ -1,8 +1,7 @@
-# Vision-and-Force Robotic Cable Insertion
+# Intrinsic - AI for Industry Challenge
 
-Technical article for our AI for Industry Challenge project. It explains how
-multiview keypoints, calibrated geometry, per-grasp transforms, and guarded
-force control form a shared SFP and SC insertion pipeline.
+Article about our AI for Industry Challenge project and the vision-and-force
+system used to insert SFP and SC connectors.
 
 The article is published with GitHub Pages at:
 
