@@ -18,12 +18,3 @@ https://satyaa27.github.io/vision-force-cable-insertion/
   Cayman theme.
 - `assets/system-architecture.svg` — an original high-level architecture
   diagram.
-
-## Local preview
-
-GitHub Pages builds the site with Jekyll and the Cayman theme. With Ruby and
-Bundler installed, preview it locally with:
-
-```sh
-bundle exec jekyll serve
-```
