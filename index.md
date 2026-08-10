@@ -16,6 +16,8 @@ into network interface card (NIC) ports, and SC fiber-optic plugs into optical
 adapters. It performed these insertions using three wrist-mounted cameras and
 a sensor that measures contact forces.
 
+![Labeled overview of the challenge task board, including NIC cards, SFP ports, SC ports, cable ends, and the mounting area.](assets/media/task-board-overview.png)
+
 We built a ROS 2 system that combines vision with force feedback. The cameras
 locate the held connector and its destination in three-dimensional space. The
 robot then aligns the connector, moves it toward the port, and uses its force
