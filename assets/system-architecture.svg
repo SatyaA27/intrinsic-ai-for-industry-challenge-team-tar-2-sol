@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="250" viewBox="0 0 1200 250" role="img" aria-labelledby="title description">
+  <title id="title">Shared SFP and SC insertion pose pipeline</title>
+  <desc id="description">Four stages from choosing a useful camera view through measuring physical frames, constructing a TCP target, and guarded insertion.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#77736c"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="250" fill="#fbfaf7"/>
+  <line x1="55" y1="52" x2="1145" y2="52" stroke="#20201e" stroke-width="1"/>
+  <text x="55" y="32" fill="#66635d" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing="1.4">SFP + SC INSERTION PIPELINE</text>
+
+  <g fill="none" stroke="#77736c" stroke-width="1.5" marker-end="url(#arrow)">
+    <path d="M 250 148 L 330 148"/>
+    <path d="M 550 148 L 630 148"/>
+    <path d="M 850 148 L 930 148"/>
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <g transform="translate(55 90)">
+      <text x="0" y="0" fill="#963b2b" font-size="14" font-weight="700">01</text>
+      <text x="0" y="38" fill="#20201e" font-size="22">Find a useful view</text>
+      <text x="0" y="67" fill="#66635d" font-size="14">Plan from board pose</text>
+    </g>
+    <g transform="translate(355 90)">
+      <text x="0" y="0" fill="#963b2b" font-size="14" font-weight="700">02</text>
+      <text x="0" y="38" fill="#20201e" font-size="22">Measure both frames</text>
+      <text x="0" y="67" fill="#66635d" font-size="14">Fuse plug + port in 3D</text>
+    </g>
+    <g transform="translate(655 90)">
+      <text x="0" y="0" fill="#963b2b" font-size="14" font-weight="700">03</text>
+      <text x="0" y="38" fill="#20201e" font-size="22">Build the TCP target</text>
+      <text x="0" y="67" fill="#66635d" font-size="14">Apply grasp transform</text>
+    </g>
+    <g transform="translate(955 90)">
+      <text x="0" y="0" fill="#963b2b" font-size="14" font-weight="700">04</text>
+      <text x="0" y="38" fill="#20201e" font-size="22">Insert and verify</text>
+      <text x="0" y="67" fill="#66635d" font-size="14">Align, seat, and recover</text>
+    </g>
+  </g>
+</svg>
