@@ -3,7 +3,7 @@
 Article about our AI for Industry Challenge project and the vision-and-force
 system used to insert SFP and SC connectors.
 
-Read the published article: [Intrinsic - AI for Industry Challenge](https://satyaa27.github.io/vision-force-cable-insertion/)
+Read the published article: [Intrinsic - AI for Industry Challenge](https://satyaa27.github.io/intrinsic-ai-for-industry-challenge-team-tar-2-sol/)
 
 ## Contents
 
