@@ -39,6 +39,18 @@ Every insertion follows the same four stages:
 SFP and SC share this structure. Their physical dimensions, port landmarks,
 insertion depths, and recovery behaviors are configured separately.
 
+## Insertion demo
+
+The video shows an SFP insertion followed by an SC insertion in simulation.
+
+<figure class="demo-video">
+  <video controls preload="metadata" playsinline poster="assets/media/sfp-sc-insertion-poster.jpg">
+    <source src="assets/media/sfp-sc-insertion.mp4" type="video/mp4">
+    Your browser does not support embedded MP4 video.
+  </video>
+  <figcaption>SFP insertion followed by SC insertion.</figcaption>
+</figure>
+
 ## 1. Find a useful view
 
 The board and rail-mounted targets can move between trials, so the cameras
