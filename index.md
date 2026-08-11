@@ -53,6 +53,18 @@ Every insertion follows the same four stages:
 The same pipeline handles both SFP and SC connectors, with separate dimensions,
 landmarks, insertion depths, and recovery settings.
 
+## Insertion demo
+
+The video shows an SFP insertion followed by an SC insertion in simulation.
+
+<figure class="demo-video">
+  <video controls preload="metadata" playsinline poster="assets/media/sfp-sc-insertion-poster.jpg">
+    <source src="assets/media/sfp-sc-insertion.mp4" type="video/mp4">
+    Your browser does not support embedded MP4 video.
+  </video>
+  <figcaption>SFP insertion followed by SC insertion.</figcaption>
+</figure>
+
 ## 1. Find a useful view
 
 The board and rail-mounted targets can move between trials, so the cameras

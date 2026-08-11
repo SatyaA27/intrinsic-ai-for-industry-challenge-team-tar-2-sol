@@ -11,5 +11,7 @@ Read the published article: [Intrinsic - AI for Industry Challenge](https://saty
 - `_config.yml` — the GitHub Pages title, description, URL, and theme.
 - `assets/css/style.scss` — a restrained editorial layout layered over the
   Cayman theme.
+- `assets/media/sfp-sc-insertion.mp4` — the 4K SFP and SC insertion demo.
+- `assets/media/sfp-sc-insertion-poster.jpg` — the video poster frame.
 - `assets/system-architecture.svg` — an original high-level architecture
   diagram.
